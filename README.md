@@ -1,6 +1,34 @@
 # accessiblity-playbook
 Multi-book accessibility knowledge base as a Claude Code / Amp skill — distills the AccessAbility Playbook, Giving a Damn About Accessibility, and the Appt Handbook into on-demand frameworks for service, design, and WCAG/mobile.
 
+## What this skill does
+
+It gives Claude Code (or Amp) a **curated, source-tagged accessibility reference** that loads only when you need it. Instead of relying on the model's generic, sometimes-outdated accessibility knowledge, it pulls answers from three vetted books — each covering a different layer of the problem:
+
+- **Service & organization [P]** — *AccessAbility Playbook* (Gov. of Canada): how to deliver accessible client service in person, by phone, and online; barrier audits, personas, culture change.
+- **Mindset & advocacy [GD]** — *Giving a Damn About Accessibility* (Sheri Byrne-Haber): how to win the argument internally, counter resistance, avoid overlay snake-oil, and go from compliant to genuinely great.
+- **Build & WCAG [Appt]** — *Appt Accessibility Handbook*: WCAG 2.2 (POUR) criteria at A/AA, mobile-app specifics, contrast/target-size/keyboard rules, and a shift-left testing approach.
+
+The skill ships a `SKILL.md` index plus per-chapter files, a glossary, reusable patterns, and a cheatsheet — so Claude reads the *relevant* chapter on demand rather than guessing.
+
+## What you can use it for
+
+- **During code review or design** — "is this contrast ratio compliant?", "what's the minimum touch-target size?", "does this custom component have proper Name/Role/Value?"
+- **Writing UI copy & forms** — plain-language checks, accessible error messages, time-limit and save-and-resume patterns.
+- **Making the case for accessibility** — turn "only a few users need this" or "where's the ROI?" into a grounded counter-argument (the 6 resistance archetypes, the substitution test).
+- **Auditing a service or product** — the 5 Barrier Areas, the Channel × Disability matrix, the maturity/shift-left model.
+- **Looking up a specific WCAG criterion or chapter** — pass a topic, a criterion, a book, or a chapter id like `appt-ch03` and get a scoped answer.
+
+## Why use it instead of asking the model directly
+
+- **Grounded, not hallucinated** — answers come from named sources with chapter citations, so you can verify and quote them.
+- **Always the right altitude** — it spans the *whole* problem (people → process → design → code), not just WCAG line-items, so you don't miss the organizational or advocacy side.
+- **On-demand, low-noise** — it stays out of the way until an accessibility question comes up, then loads only the chapter that matters.
+- **Multi-perspective** — three authors with different lenses (government service, advocate, mobile/WCAG engineer) cross-check each other, with a "WCAG is a floor, not a ceiling" stance baked in.
+- **Practical defaults** — opinionated, ship-it guidance ("press 0", no time limits, errors in text + fix suggestion, test *with* disabled users) rather than abstract principles.
+
+> Honest scope: the WCAG summaries are condensed paraphrases (A/AA only) — for normative text consult the W3C spec, and always pair this with a real screen-reader pass for hands-on work. See [Scope & Limits in `SKILL.md`](SKILL.md).
+
 ## Install as a Claude Code skill
 
 The skill lives in `SKILL.md` (with supporting content in `chapters/`, `glossary.md`, `patterns.md`, and `cheatsheet.md`). To use it in Claude Code, copy this repo into a skills directory under the skill's name (`accessability-playbook`).
